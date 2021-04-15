@@ -25,6 +25,7 @@ const router = async () => {
 
   main.innerHTML = block
   let elementsFlip = document.getElementsByClassName('flip-box');
+  let box1 = []
   function change()  {
     // console.log('click')
     for(let i of elementsFlip) {
@@ -32,13 +33,17 @@ const router = async () => {
       if (i.className.includes('flipar')) {
         i.onclick = () => i.classList.remove('flipar');
       } else {
-        i.onclick = () => i.classList.add('flipar');
+        i.onclick = () => {
+          i.classList.add('flipar')
+          console.log(i.id)
+          box1.push(parseInt(i.id))
+          console.log(box1)
+        }
       }
     }
   }
   change()
   document.getElementById('main').addEventListener('click', change)
-
   const button = document.getElementById('button-random');
 
   button.onclick = () => router()
