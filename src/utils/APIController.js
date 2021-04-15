@@ -10,7 +10,7 @@ const APIController = (() => {
       let id = getRandomInt(1, 151)
       try {
         const data = await _getPokemonId(id)
-        console.log(data)
+        // console.log(data)
         pokemonList.push(data)
       } catch (err) {
         pokemonList.push(data)
