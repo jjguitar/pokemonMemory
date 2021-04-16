@@ -1,5 +1,5 @@
 const Home = (pokemonList) => {
-  let jhon = 0
+  let numberOfCard = 0
   let block = pokemonList.map((pokemon) =>
     `
     <div class="flip-box" value="${pokemon.id}">
@@ -18,7 +18,7 @@ const Home = (pokemonList) => {
             </div>
             <div class="circle-big shadow-circle"></div>
             <div class="center">
-              <div class="circle">${++jhon}</div>
+              <div class="circle">${++numberOfCard}</div>
             </div>
             <div class="box2 shadow-bottom">
               <div class="curve-l1 bottom"></div>

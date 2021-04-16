@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
 
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,38 +9,40 @@
   list-style: none;
 }
 
+
 a {
   color: inherit;
 }
 
 html {
   min-width:320px;
+  max-width: 1024px;
+  margin: 0 auto;
   font-size: 62.5%;
   font-family: 'Open Sans', sans-serif;
   scroll-behavior: smooth;
   font-family: 'Lato', sans-serif;
-  color: white;
+  color: black;
   width: 100%;
   height: 100%;
 }
 
+
+
 body {
   display: flex;
-  overscroll-behavior-y: none;
-  overflow: hidden;
-  position: fixed;
   width: 100%;
   height: 100%;
   flex-direction: column;
-  background-color: #000000
+  background-color: #FFF
 }
 
 .cards-container {
   position: relative;
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(4, 100px);
-  grid-template-rows: repeat(4, 160px);
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(6, 160px);
   margin-bottom: 30px;
 }
 
@@ -234,4 +236,67 @@ body {
 
 .shadow-circle {
   box-shadow: inset 3px 4px 6px #fff;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 0;
+}
+
+.flip-box:last-child {
+  grid-column: 2;
+}
+
+.button-random {
+  width: 151px;
+  height: 48px;
+  cursor: pointer;
+  background: white;
+  border: 2px solid red;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  color: black;
+}
+
+.button-random:hover {
+  background: red;
+  color: white;
+}
+
+#loading {
+  width: 100px;
+  height: 100px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  border-radius: 50%;
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce{
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 249px;
+    width: 130px;
+    height: 70px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+#loading p {
+  font-size: 2rem;
 }
