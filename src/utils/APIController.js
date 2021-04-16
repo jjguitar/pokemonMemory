@@ -16,6 +16,8 @@ const APIController = (() => {
         pokemonList.push(data)
       }
     }
+    pokemonList = [...pokemonList, ...pokemonList]
+    pokemonList = pokemonList.sort((a, b) => 0.5 - Math.random());
 
     return pokemonList
   }

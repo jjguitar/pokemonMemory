@@ -1,8 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+html {
+  min-width:320px;
+  font-size: 62.5%;
+  font-family: 'Open Sans', sans-serif;
+  scroll-behavior: smooth;
+  font-family: 'Lato', sans-serif;
+  color: white;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  overscroll-behavior-y: none;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  background-color: #000000
+}
+
 .cards-container {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(4, 118px);
-  grid-template-rows: repeat(4, 145px);
+  gap: 10px;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 160px);
   margin-bottom: 30px;
 }
 
@@ -12,13 +50,13 @@
   align-items: center;
   flex-direction: column;
   margin: 0 auto;
+  padding-top: 60px;
 }
 
 .flip-box {
   background-color: transparent;
   width: 100%;
   height: 100%;
-  border: 1px solid #f1f1f1;
   cursor: pointer;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
@@ -55,13 +93,145 @@
 
 /* Style the front side (fallback if image is missing) */
 .flip-box-front {
-  background-color: #bbb;
   color: black;
 }
 
 /* Style the back side */
 .flip-box-back {
-  background-color: dodgerblue;
+  background-color: #AADEEC;
   color: white;
+  border-radius: 25px;
   transform: rotateY(180deg);
+}
+
+.movements-container, .number-of-pairs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.movements-container h1, .number-of-pairs h1 {
+  margin: 20px 0 0;
+}
+
+.movements-container h2, .number-of-pairs h2 {
+  margin: 10px 0 0;
+}
+
+.box-main {
+  position: relative;
+  background: #AADEEC;
+  width:100px;
+  height:160px;
+  border-radius: 25px;
+}
+
+.box1, .box2 {
+  background: #C00D22;
+  position: relative;
+  width: 100%;
+  height: 68px;
+}
+
+.box1 {
+  border-radius: 25px 25px 0 0;
+}
+
+.box2 {
+  border-radius: 0 0 25px 25px;
+  z-index: 1;
+}
+
+.center {
+  position: relative;
+  background: linear-gradient(180deg, rgba(170,222,236,1) 0%, rgba(231,250,255,1) 100%);
+  width: 100%;
+  height: 24px;
+  z-index: 2;
+}
+
+.circle-big {
+  top: 40px;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  background: black;
+  left: 10px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.circle {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(180deg, rgba(170,222,236,1) 0%, rgba(231,250,255,1) 100%);;
+  border-radius: 50%;
+  top: -12.5px;
+  left: 25px;
+}
+
+.curve-l1 {
+  width: 25px;
+  height: 25px;
+  border-right: 3px solid black;
+  border-radius: 0 0 100% 0;
+  border-bottom: 3px solid black;
+}
+
+.curve-l1-little {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-right: 3px solid black;
+  border-radius: 0 0 100% 0;
+  border-bottom: 3px solid black;
+}
+
+.top {
+  top: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.curve-r1 {
+  transform: rotate(90deg);
+  position: absolute;
+}
+
+.curve-r1-little {
+  transform: rotate(90deg);
+  position: absolute;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  transform: rotate(-90deg);
+}
+
+.rotate-bottom {
+  transform: rotate(180deg);
+}
+
+.shadow-bottom {
+  -webkit-box-shadow:inset -12px -12px 28px #5c5c5c;
+  -moz-box-shadow:inset -12px -12px 28px #5c5c5c;
+  box-shadow: inset -6px -6px 28px #5c5c5c;
+}
+
+.shadow-top {
+  -webkit-box-shadow:inset -13px 22px 28px #5c5c5c;
+  -moz-box-shadow:inset -13px 22px 28px #5c5c5c;
+  box-shadow: inset -7px 12px 28px #5c5c5c;
+}
+
+.shadow-circle {
+  box-shadow: inset 3px 4px 6px #fff;
 }
