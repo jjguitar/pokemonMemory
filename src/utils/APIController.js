@@ -1,4 +1,4 @@
-import getRandomInt from './getRandomInt.js'
+import getRandomArray from './getRandomArray.js'
 
 const API = 'https://pokeapi.co/api/v2/pokemon'
 
@@ -6,16 +6,18 @@ const APIController = (() => {
 
   const _getPokemonList = async () => {
     let pokemonList = []
+    let ids = getRandomArray()
     for (let i = 0; i < 8; i++) {
-      let id = getRandomInt(1, 151)
       try {
-        const data = await _getPokemonId(id)
+        const data = await _getPokemonId(ids[i])
         // console.log(data)
         pokemonList.push(data)
       } catch (err) {
         pokemonList.push(data)
       }
     }
+    pokemonList = [...pokemonList, ...pokemonList]
+    pokemonList = pokemonList.sort((a, b) => 0.5 - Math.random());
 
     return pokemonList
   }
