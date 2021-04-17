@@ -37,7 +37,7 @@ const router = async () => {
     flipCards(compareCards, counterPairs, countersMovements)
     window.addEventListener('click', flipCards(compareCards, counterPairs, countersMovements))
 
-  }, 400);
+  }, 200);
 
   buttonPlayAgain.onclick = () => {
     document.getElementById('movements').innerHTML = `${countersMovements}`
