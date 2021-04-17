@@ -41,9 +41,11 @@ body {
   position: relative;
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(6, 160px);
+  grid-template-columns: repeat(4, 70px);
+  grid-template-rows: repeat(4, 110px);
   margin-bottom: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .main {
@@ -52,7 +54,7 @@ body {
   align-items: center;
   flex-direction: column;
   margin: 0 auto;
-  padding-top: 60px;
+  padding-top: 40px;
 }
 
 .flip-box {
@@ -102,7 +104,7 @@ body {
 .flip-box-back {
   background-color: #AADEEC;
   color: white;
-  border-radius: 25px;
+  border-radius: 12px;
   transform: rotateY(180deg);
 }
 
@@ -121,27 +123,31 @@ body {
   margin: 10px 0 0;
 }
 
+.number-of-pairs {
+  margin-bottom: 30px;
+}
+
 .box-main {
   position: relative;
   background: #AADEEC;
-  width:100px;
-  height:160px;
-  border-radius: 25px;
+  width:70px;
+  height:110px;
+  border-radius: 15px;
 }
 
 .box1, .box2 {
   background: #C00D22;
   position: relative;
   width: 100%;
-  height: 68px;
+  height: 45px;
 }
 
 .box1 {
-  border-radius: 25px 25px 0 0;
+  border-radius: 15px 15px 0 0;
 }
 
 .box2 {
-  border-radius: 0 0 25px 25px;
+  border-radius: 0 0 15px 15px;
   z-index: 1;
 }
 
@@ -149,14 +155,14 @@ body {
   position: relative;
   background: linear-gradient(180deg, rgba(170,222,236,1) 0%, rgba(231,250,255,1) 100%);
   width: 100%;
-  height: 24px;
+  height: 20px;
   z-index: 2;
 }
 
 .circle-big {
-  top: 40px;
-  width: 80px;
-  height: 80px;
+  top: 30px;
+  width: 50px;
+  height: 50px;
   position: absolute;
   background: black;
   left: 10px;
@@ -169,29 +175,29 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   background: linear-gradient(180deg, rgba(170,222,236,1) 0%, rgba(231,250,255,1) 100%);;
   border-radius: 50%;
-  top: -12.5px;
-  left: 25px;
+  top: -7.5px;
+  left: 18px;
 }
 
 .curve-l1 {
-  width: 25px;
-  height: 25px;
-  border-right: 3px solid black;
+  width: 15px;
+  height: 15px;
+  border-right: 2px solid black;
   border-radius: 0 0 100% 0;
-  border-bottom: 3px solid black;
+  border-bottom: 2px solid black;
 }
 
 .curve-l1-little {
   position: absolute;
-  width: 40px;
-  height: 40px;
-  border-right: 3px solid black;
+  width: 25px;
+  height: 25px;
+  border-right: 2px solid black;
   border-radius: 0 0 100% 0;
-  border-bottom: 3px solid black;
+  border-bottom: 2px solid black;
 }
 
 .top {
@@ -225,18 +231,19 @@ body {
 .shadow-bottom {
   -webkit-box-shadow:inset -12px -12px 28px #5c5c5c;
   -moz-box-shadow:inset -12px -12px 28px #5c5c5c;
-  box-shadow: inset -6px -6px 28px #5c5c5c;
+  box-shadow: inset -2px -3px 7px #5c5c5c;
 }
 
 .shadow-top {
   -webkit-box-shadow:inset -13px 22px 28px #5c5c5c;
   -moz-box-shadow:inset -13px 22px 28px #5c5c5c;
-  box-shadow: inset -7px 12px 28px #5c5c5c;
+  box-shadow: inset -2px 2px 6px #5c5c5c;
 }
 
 .shadow-circle {
-  box-shadow: inset 3px 4px 6px #fff;
+  box-shadow: inset 1px 1px 4px #fff;
 }
+
 
 .logo-container {
   display: flex;
@@ -244,9 +251,9 @@ body {
   padding: 20px 0 0;
 }
 
-.flip-box:last-child {
+/* .flip-box:last-child {
   grid-column: 2;
-}
+} */
 
 .button-random {
   width: 151px;
