@@ -1,5 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
+:root {
+  --width-box: 70px;
+  --height-box: 110px;
+  --height-middle-box: 45px;
+  --height-center: 20px;
+  --top-circle-big: 30px;
+  --width-circle-big: 50px;
+  --height-circle-big: 50px;
+  --left-circle-big: 10px;
+  --width-circle-little: 35px;
+  --height-circle-little: 35px;
+  --top-circle-little: -7.5px;
+  --left-circle-little: 18px;
+  --width-curve-l1: 15px;
+  --height-curve-l1: 15px;
+  --width-curve-l1-little: 25px;
+  --height-curve-l1-little: 25px;
+  --column: 4;
+  --row: 4;
+  --button-width: 150px;
+  --movements-container-width: 150px;
+}
 
 *{
   margin: 0;
@@ -27,7 +49,10 @@ html {
   height: 100%;
 }
 
-
+.max-dimension {
+  width: 100%;
+  height: 100%;
+}
 
 body {
   display: grid;
@@ -37,8 +62,6 @@ body {
   "footer footer";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: minmax(90px, 1fr) 1fr 1fr 30px;
-  width: 100%;
-  height: 100%;
   flex-direction: column;
   background-color: #FFF
 }
@@ -51,8 +74,8 @@ body {
   position: relative;
   display: grid;
   gap: 5px;
-  grid-template-columns: repeat(4, 70px);
-  grid-template-rows: repeat(4, 110px);
+  grid-template-columns: repeat(var(--column), var(--width-box));
+  grid-template-rows: repeat(var(--row), var(--height-box));
   margin-bottom: 10px;
   background-repeat: no-repeat;
   background-position: center;
@@ -64,7 +87,7 @@ body {
   justify-content: space-between;
   align-self: center;
   color: white;
-  margin-top: 5px;
+  /* margin-top: 5px; */
   height: 30px;
   padding: 10px 30px;
   background: #170303;
@@ -92,8 +115,6 @@ body {
 
 .flip-box {
   background-color: transparent;
-  width: 100%;
-  height: 100%;
   cursor: pointer;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
@@ -101,8 +122,6 @@ body {
 /* This container is needed to position the front and back side */
 .flip-box-inner {
   position: relative;
-  width: 100%;
-  height: 100%;
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
@@ -113,8 +132,6 @@ body {
   transform: rotateY(180deg);
 }
 
-
-
 /* Position the front and back side */
 .flip-box-front, .flip-box-back {
   position: absolute;
@@ -122,8 +139,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
 }
@@ -174,14 +189,6 @@ body {
   font-size:1.6rem
 }
 
-/* .movements-container h1, .number-of-pairs h1 {
-  margin: 20px 0 0;
-}
-
-.movements-container h2, .number-of-pairs h2 {
-  margin: 10px 0 0;
-} */
-
 .number-of-pairs {
   margin-bottom: 30px;
 }
@@ -189,8 +196,8 @@ body {
 .box-main {
   position: relative;
   background: #AADEEC;
-  width:70px;
-  height:110px;
+  width: var(--width-box);
+  height: var(--height-box);
   border-radius: 15px;
 }
 
@@ -198,7 +205,7 @@ body {
   background: #C00D22;
   position: relative;
   width: 100%;
-  height: 45px;
+  height: var(--height-middle-box);
 }
 
 .box1 {
@@ -214,17 +221,17 @@ body {
   position: relative;
   background: linear-gradient(180deg, rgba(170,222,236,1) 0%, rgba(231,250,255,1) 100%);
   width: 100%;
-  height: 20px;
+  height: var(--height-center);
   z-index: 2;
 }
 
 .circle-big {
-  top: 30px;
-  width: 50px;
-  height: 50px;
+  top: var(--top-circle-big);
+  width: var(--width-circle-big);
+  height: var(--height-circle-big);
+  left: var(--left-circle-big);
   position: absolute;
   background: black;
-  left: 10px;
   border-radius: 50%;
   z-index: 2;
 }
@@ -234,12 +241,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 35px;
-  height: 35px;
+  width: var(--width-circle-little);
+  height: var(--height-circle-little);
+  top: var(--top-circle-little);
+  left: var(--left-circle-little);
   background: linear-gradient(180deg, rgba(170,222,236,1) 0%, rgba(231,250,255,1) 100%);;
   border-radius: 50%;
-  top: -7.5px;
-  left: 18px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -247,8 +254,8 @@ body {
 }
 
 .curve-l1 {
-  width: 15px;
-  height: 15px;
+  width: var(--width-curve-l1);
+  height: var(--height-curve-l1);
   border-right: 2px solid black;
   border-radius: 0 0 100% 0;
   border-bottom: 2px solid black;
@@ -256,8 +263,8 @@ body {
 
 .curve-l1-little {
   position: absolute;
-  width: 25px;
-  height: 25px;
+  width: var(--width-curve-l1-little);
+  height: var(--height-curve-l1-little);
   border-right: 2px solid black;
   border-radius: 0 0 100% 0;
   border-bottom: 2px solid black;
@@ -378,7 +385,7 @@ body {
 }
 
 .button-random {
-  width: 150px;
+  width: var(--button-width);
   height: 40px;
   cursor: pointer;
   background: white;
@@ -396,4 +403,273 @@ body {
 .button-random:hover {
   background: red;
   color: white;
+}
+
+@media (max-height: 360px) and (min-width: 640px) {
+
+  :root {
+    --width-box: 55px;
+    --height-box: 80px;
+    --height-middle-box: 35px;
+    --height-center: 10px;
+    --top-circle-big: 20px;
+    --width-circle-big: 40px;
+    --height-circle-big: 40px;
+    --left-circle-big: 7.5px;
+    --width-circle-little: 25px;
+    --height-circle-little: 25px;
+    --top-circle-little: -7px;
+    --left-circle-little: 16px;
+    --width-curve-l1: 12px;
+    --height-curve-l1: 12px;
+    --width-curve-l1-little: 20px;
+    --height-curve-l1-little: 20px;
+    --column: 8;
+    --row: 2;
+    --button-width: 110px;
+    --movements-container-width: 100%;
+  }
+
+  body {
+    grid-template-areas: "header header header"
+    "main main play"
+    "main main info"
+    "footer footer footer";
+    grid-template-columns: 1fr 1fr .5fr;
+  }
+
+  .container__button  {
+    justify-content:center;
+  }
+
+  #loading {
+    top: 165px;
+  }
+
+  .flip-box-back p {
+    font-size: .8rem;
+  }
+  .flip-box-back img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 319px) {
+  :root {
+    --column: 3;
+    --row: 6;
+  }
+  .cards-container .flip-box:last-child {
+    grid-column: 2;
+  }
+}
+
+@media (max-height: 375px) and (min-width: 812px) {
+
+  :root {
+    --column: 8;
+    --row: 2;
+    --movements-container-width: 100%;
+  }
+
+  body {
+    grid-template-areas: "header header header"
+    "main main play"
+    "main main info"
+    "footer footer footer";
+    grid-template-columns: 1fr 1fr .6fr;
+  }
+
+  .container__button {
+    justify-content:center;
+  }
+
+  #loading {
+    top: 185px;
+  }
+
+  .movements-container {
+    width:100%;
+  }
+}
+
+@media (max-height: 411px) and (min-width: 731px) {
+  :root {
+    --column: 8;
+    --row: 2;
+    --movements-container-width: 100%;
+  }
+  #loading {
+    top: 145px;
+  }
+}
+
+@media (max-height: 540px) and (min-height: 500px) and (min-width: 720px) {
+  :root {
+    --column: 8;
+    --row: 2;
+    --movements-container-width: 100%;
+  }
+  #loading {
+    top: 205px;
+  }
+
+  .cards-container {
+    gap: 15px;
+    padding-top: 20px;
+  }
+}
+
+@media (max-height: 768px) and (min-width: 1024px) {
+  .main > #loading {
+    top: 325px;
+  }
+}
+
+@media (max-height: 950px) and (min-width: 1024px) {
+
+/* @media (max-height: 768px) and (min-width: 1024px) { */
+  html {
+    max-width: 100%;
+  }
+
+  :root {
+    --width-box: 110px;
+    --height-box: 170px;
+    --height-middle-box: 70px;
+    --height-center: 30px;
+    --top-circle-big: 50px;
+    --width-circle-big: 80px;
+    --height-circle-big: 80px;
+    --left-circle-big: 15px;
+    --width-circle-little: 55px;
+    --height-circle-little: 55px;
+    --top-circle-little: -7.5px;
+    --left-circle-little: 28px;
+    --width-curve-l1: 25px;
+    --height-curve-l1: 25px;
+    --width-curve-l1-little: 45px;
+    --height-curve-l1-little: 45px;
+    --column: 8;
+    --row: 2;
+    --movements-container-width: 100%;
+  }
+
+  .logo-container img {
+    width: 300px;
+    height: 140px;
+  }
+
+  .circle {
+    font-size:1.6rem;
+  }
+
+  .cards-container {
+    padding-top:10px;
+    gap: 15px;
+  }
+
+  #loading {
+    top: 425px;
+  }
+
+  .flip-box-back p {
+    font-size: 1.6rem;
+  }
+  .flip-box-back img {
+    width: 100px;
+    height: 100px;
+  }
+
+}
+
+@media (min-height: 870px) and (min-width: 480px) and (max-width: 1024px) {
+  :root {
+    --width-box: 110px;
+    --height-box: 170px;
+    --height-middle-box: 70px;
+    --height-center: 30px;
+    --top-circle-big: 50px;
+    --width-circle-big: 80px;
+    --height-circle-big: 80px;
+    --left-circle-big: 15px;
+    --width-circle-little: 55px;
+    --height-circle-little: 55px;
+    --top-circle-little: -7.5px;
+    --left-circle-little: 28px;
+    --width-curve-l1: 25px;
+    --height-curve-l1: 25px;
+    --width-curve-l1-little: 45px;
+    --height-curve-l1-little: 45px;
+    --movements-container-width: 100%;
+  }
+
+  #loading {
+    top: 360px;
+  }
+}
+
+@media (min-height: 950px) and (min-width: 1281px) {
+  :root {
+    --width-box: 150px;
+    --height-box: 210px;
+    --height-middle-box: 85px;
+    --height-center: 40px;
+    --top-circle-big: 50px;
+    --width-circle-big: 110px;
+    --height-circle-big: 110px;
+    --left-circle-big: 20px;
+    --width-circle-little: 70px;
+    --height-circle-little: 70px;
+    --top-circle-little: -14.5px;
+    --left-circle-little: 40px;
+    --width-curve-l1: 35px;
+    --height-curve-l1: 35px;
+    --width-curve-l1-little: 55px;
+    --height-curve-l1-little: 55px;
+    --movements-container-width: 100%;
+    --column: 8;
+    --row: 2;
+    --button-width: 190px
+  }
+  html {
+    max-width: 100%;
+  }
+  .logo-container img {
+    width: 400px;
+    height: 230px;
+  }
+  .cards-container {
+    gap: 20px;
+  }
+
+  .circle {
+    font-size:2rem;
+  }
+
+  #loading {
+    top: 430px;
+  }
+
+  .button-random {
+    height:60px;
+    font-size: 2.2rem;
+  }
+
+  .movements-container {
+    width: 300px;
+    font-size: 2.2rem;
+  }
+  .movements-container #movements {
+    font-size: 2.2rem;
+  }
+
+  .flip-box-back p {
+    font-size: 2.2rem;
+  }
+  .flip-box-back img {
+    width: 130px;
+    height: 130px;
+  }
 }

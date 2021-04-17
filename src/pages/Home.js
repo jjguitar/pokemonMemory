@@ -2,13 +2,13 @@ const Home = (pokemonList) => {
   let numberOfCard = 0
   let block = pokemonList.map((pokemon) =>
     `
-    <div class="flip-box" value="${pokemon.id}">
-      <div class="flip-box-inner">
-        <div class="flip-box-back">
+    <div class="flip-box max-dimension" value="${pokemon.id}">
+      <div class="flip-box-inner max-dimension">
+        <div class="flip-box-back max-dimension">
           <img src="${pokemon.sprites.front_default}" alt="Paris" width="80" height="80">
           <p>${pokemon.name}</p>
         </div>
-        <div class="flip-box-front">
+        <div class="flip-box-front max-dimension">
           <div class="box-main">
             <div class="box1 shadow-top">
               <div class="curve-l1"></div>
