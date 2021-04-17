@@ -2,6 +2,7 @@ import APIController from '../utils/APIController.js'
 import flipCards from '../utils/flipCards.js'
 import Home from '../pages/Home.js'
 import Header from '../templates/header.js'
+import Footer from '../templates/footer.js'
 import Pokeball from '../templates/pokeball.js'
 import opacityImage from '../assets/img/pokeball.svg'
 
@@ -10,6 +11,7 @@ const router = async () => {
   let loading
   let header
   let buttonPlayAgain
+  let footer
   let compareCards = []
   let counterPairs = 0
   let countersMovements = 0
@@ -20,6 +22,7 @@ const router = async () => {
   loading = document.getElementById('loading')
   header = document.getElementById('header')
   buttonPlayAgain = document.getElementById('button-play-again')
+  footer = document.getElementById('footer')
 
   header.innerHTML = await Header()
   loading.innerHTML = await Pokeball()
@@ -38,11 +41,12 @@ const router = async () => {
 
   buttonPlayAgain.onclick = () => {
     document.getElementById('movements').innerHTML = `${countersMovements}`
-    document.getElementById('pairs').innerHTML = `${counterPairs}`
     main.innerHTML = ''
     loading.style.display = 'block'
     router()
   }
+
+  footer.innerHTML = await Footer()
 
 }
 

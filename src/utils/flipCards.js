@@ -1,5 +1,4 @@
 let winnerText = document.getElementById('movements')
-let pairsText = document.getElementById('pairs')
 function cardsValidation(box1) {
   if (box1[0] === box1[1]) {
     return true
@@ -33,7 +32,6 @@ const flipCards = (compareCards, counterPairs, countersMovements) => {
 
       if ((compareCards.length === 2) && cardsValidation(compareCards)) {
           ++counterPairs;
-          pairsText.innerHTML = `${counterPairs}`
           let deletes = document.getElementsByClassName('compare')
           setTimeout(() => {
             for (let j of deletes) {

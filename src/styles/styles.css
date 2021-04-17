@@ -30,31 +30,53 @@ html {
 
 
 body {
-  display: flex;
+  display: grid;
+  grid-template-areas: "header header"
+  "main main"
+  "play info"
+  "footer footer";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
   width: 100%;
   height: 100%;
   flex-direction: column;
   background-color: #FFF
 }
 
+#header {
+  grid-area: header;
+  align-self: center;
+}
 .cards-container {
   position: relative;
   display: grid;
-  gap: 10px;
+  gap: 5px;
   grid-template-columns: repeat(4, 70px);
   grid-template-rows: repeat(4, 110px);
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   background-repeat: no-repeat;
   background-position: center;
 }
 
+#footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  color: white;
+  margin-top: 5px;
+  height: 30px;
+  padding: 10px 30px;
+  background: #170303;
+}
+
 .main {
+  grid-area: main;
   display:flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin: 0 auto;
-  padding-top: 40px;
 }
 
 .flip-box {
@@ -108,20 +130,36 @@ body {
   transform: rotateY(180deg);
 }
 
-.movements-container, .number-of-pairs {
+.movements-container {
+  width: 100%;
+  height: 48px;
+  grid-area: info;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
-.movements-container h1, .number-of-pairs h1 {
+.movements-container p {
+  width: 45%;
+  text-align: center;
+  background: #AADEEC;
+  padding: 10px;
+  border-radius: 0 100% 0 100%;
+}
+
+.movements-container p:last-child {
+  font-size:1.6rem
+}
+
+/* .movements-container h1, .number-of-pairs h1 {
   margin: 20px 0 0;
 }
 
 .movements-container h2, .number-of-pairs h2 {
   margin: 10px 0 0;
-}
+} */
 
 .number-of-pairs {
   margin-bottom: 30px;
@@ -248,32 +286,12 @@ body {
 .logo-container {
   display: flex;
   justify-content: center;
-  padding: 20px 0 0;
+  padding: 5px 0 0;
 }
 
 /* .flip-box:last-child {
   grid-column: 2;
 } */
-
-.button-random {
-  width: 151px;
-  height: 48px;
-  cursor: pointer;
-  background: white;
-  border: 2px solid red;
-  box-sizing: border-box;
-  border-radius: 4px;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 1.4rem;
-  line-height: 1.8rem;
-  color: black;
-}
-
-.button-random:hover {
-  background: red;
-  color: white;
-}
 
 /* #loading {
   width: 100px;
@@ -310,7 +328,7 @@ body {
 
 #loading {
   position: absolute;
-  top: 325px;
+  top: 260px;
   z-index: 3;
 }
 
@@ -325,4 +343,31 @@ body {
 	to {
 		transform: rotate(359deg);
 	}
+}
+
+.container__button {
+  grid-area: play;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.button-random {
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  background: white;
+  border: 2px solid red;
+  box-sizing: border-box;
+  border-radius: 25px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  color: black;
+}
+
+.button-random:hover {
+  background: red;
+  color: white;
 }
