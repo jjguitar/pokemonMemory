@@ -5,7 +5,7 @@ const Home = (pokemonList) => {
     <div class="flip-box" value="${pokemon.id}">
       <div class="flip-box-inner">
         <div class="flip-box-back">
-          <img src="${pokemon.sprites.front_default}" alt="Paris">
+          <img src="${pokemon.sprites.front_default}" alt="Paris" width="80" height="80">
           <p>${pokemon.name}</p>
         </div>
         <div class="flip-box-front">
